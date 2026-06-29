@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://house-mistral-site.vercel.app/sitemap.xml
+Sitemap: https://house-mistral.vercel.app/sitemap.xml

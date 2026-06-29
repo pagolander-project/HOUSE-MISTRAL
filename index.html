@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>House Mistral — Seaside Apartments in Neos Marmaras, Sithonia</title>
+<meta name="description" content="House Mistral — self-catering apartments with private balconies and sea views in Neos Marmaras, Sithonia (Halkidiki), Greece. Rated 9.8 Exceptional on Booking.com. Pets welcome, free parking. Book direct via WhatsApp.">
+<meta name="keywords" content="House Mistral, Neos Marmaras, Sithonia, Halkidiki, Greece, apartments, sea view, accommodation, διαμερίσματα, Νέος Μαρμαράς">
+<meta name="theme-color" content="#123a63">
+<meta name="robots" content="index, follow">
+<!-- Domain: house-mistral-site.vercel.app. If you switch to a custom domain, update it here (canonical + og:url + og:image + twitter:image) and in sitemap.xml + robots.txt. -->
+<link rel="canonical" href="https://house-mistral-site.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="House Mistral">
+<meta property="og:title" content="House Mistral — Seaside Apartments in Neos Marmaras">
+<meta property="og:description" content="Self-catering apartments with private balconies and sea views in Sithonia, Greece. Rated 9.8 Exceptional. Book direct via WhatsApp.">
+<meta property="og:url" content="https://house-mistral-site.vercel.app/">
+<meta property="og:image" content="https://house-mistral-site.vercel.app/images/panorama-sea.jpg">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="el_GR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="House Mistral — Seaside Apartments in Neos Marmaras">
+<meta name="twitter:description" content="Self-catering apartments with sea views in Sithonia, Greece. Rated 9.8 Exceptional. Book direct via WhatsApp.">
+<meta name="twitter:image" content="https://house-mistral-site.vercel.app/images/panorama-sea.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23123a63'/><text x='16' y='23' font-family='Georgia,serif' font-size='19' fill='white' text-anchor='middle'>M</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: oklch(18% 0.02 230);
+    --blue: oklch(32% 0.14 232);
+    --blue-deep: oklch(20% 0.09 232);
+    --gold: oklch(72% 0.11 85);
+    --cream: oklch(96% 0.014 72);
+    --wa: #25D366;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: #fff; color: var(--ink); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  a { text-decoration: none; color: inherit; }
+  button { cursor: pointer; font-family: inherit; border: none; background: none; }
+  input, textarea, select { font-family: inherit; }
+  img { display: block; }
+  h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 300; }
+  section { scroll-margin-top: 70px; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-thumb { background: oklch(70% 0.08 225); border-radius: 3px; }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes bounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
+  @keyframes scaleIn { from { opacity: 0; transform: scale(0.92); } to { opacity: 1; transform: scale(1); } }
+
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; transition: background .35s, box-shadow .35s; background: rgba(10,22,46,0.08); backdrop-filter: blur(14px); }
+  nav.scrolled { background: rgba(255,255,255,0.97); box-shadow: 0 1px 24px rgba(0,0,0,0.09); }
+  .nav-inner { max-width: 1240px; margin: 0 auto; padding: 0 36px; height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+  .brand { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; letter-spacing: .1em; color: #fff; transition: color .35s; flex-shrink: 0; }
+  nav.scrolled .brand, nav.scrolled .nav-links a, nav.scrolled .lang-btn, nav.scrolled .hamburger { color: var(--blue); }
+  .nav-links { display: flex; align-items: center; gap: 20px; }
+  .nav-links a { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: #fff; opacity: .82; transition: opacity .2s; }
+  .nav-links a:hover { opacity: 1; }
+  .lang-btn { color: #fff; padding: 5px 14px; border-radius: 20px; font-size: 11px; letter-spacing: .15em; border: 1px solid rgba(255,255,255,0.5); transition: all .25s; }
+  nav.scrolled .lang-btn { border-color: oklch(75% 0.08 232); }
+  .hamburger { display: none; align-items: center; justify-content: center; width: 42px; height: 42px; color: #fff; transition: color .35s; }
+  .hamburger svg { width: 24px; height: 24px; }
+
+  .mobile-menu { display: none; position: fixed; top: 70px; left: 0; right: 0; z-index: 99; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.13); padding: 12px 24px 22px; flex-direction: column; animation: fadeIn .2s ease; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { padding: 14px 0; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: oklch(28% 0.06 232); border-bottom: 1px solid oklch(94% 0.01 230); }
+  .mobile-menu a:last-of-type { border-bottom: none; }
+  .mobile-menu .lang-btn { margin-top: 16px; align-self: flex-start; background: var(--blue); color: #fff; padding: 9px 22px; border: none; letter-spacing: .14em; }
+
+  /* HERO */
+  .hero { min-height: 100vh; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .hero-bg { position: absolute; inset: 0; background: url('images/panorama-sea.jpg') center/cover; transform: scale(1.04); }
+  .hero-overlay { position: absolute; inset: 0; background: linear-gradient(165deg, rgba(8,20,45,0.32) 0%, rgba(8,20,45,0.7) 100%); }
+  .hero-content { position: relative; z-index: 1; text-align: center; padding: 0 24px; max-width: 860px; }
+  .hero-pre { font-size: 11px; letter-spacing: .35em; text-transform: uppercase; color: oklch(82% 0.08 215); margin-bottom: 22px; animation: fadeUp .9s ease both .15s; }
+  .hero h1 { font-size: clamp(3.5rem, 8vw, 6.5rem); letter-spacing: .05em; color: #fff; margin-bottom: 22px; line-height: .95; animation: fadeUp .9s ease both .35s; }
+  .hero-sub { font-size: clamp(1rem, 2vw, 1.2rem); color: rgba(255,255,255,0.82); margin-bottom: 44px; font-weight: 300; line-height: 1.55; animation: fadeUp .9s ease both .55s; }
+  .hero-ctas { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; animation: fadeUp .9s ease both .75s; }
+  .btn-wa { display: inline-flex; align-items: center; gap: 10px; background: var(--wa); color: #fff; padding: 15px 34px; border-radius: 50px; font-size: 15px; font-weight: 500; letter-spacing: .04em; box-shadow: 0 4px 24px rgba(37,211,102,0.42); transition: transform .22s, box-shadow .22s; }
+  .btn-wa:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(37,211,102,0.55); }
+  .btn-wa svg { width: 18px; height: 18px; flex-shrink: 0; }
+  .score-badge { display: flex; align-items: center; gap: 12px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.22); backdrop-filter: blur(10px); padding: 12px 22px; border-radius: 50px; }
+  .score-badge .num { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; color: #fff; line-height: 1; }
+  .score-badge .lbl { font-size: 13px; font-weight: 500; color: #fff; line-height: 1.2; }
+  .score-badge .sub { font-size: 11px; color: rgba(255,255,255,0.65); margin-top: 2px; }
+  .scroll-cue { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 6px; color: rgba(255,255,255,0.5); animation: bounce 2.2s ease infinite 1.4s; }
+  .scroll-cue span { font-size: 10px; letter-spacing: .22em; text-transform: uppercase; }
+  .scroll-cue svg { width: 18px; height: 18px; }
+
+  .section-label { font-size: 11px; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); }
+  .section-title { font-size: clamp(2rem, 3.5vw, 2.9rem); color: var(--ink); line-height: 1.12; }
+
+  /* ABOUT */
+  .about { background: var(--cream); padding: 100px 0 120px; }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .about-img-wrap { position: relative; }
+  .about-img { width: 100%; height: 500px; object-fit: cover; border-radius: 14px; box-shadow: 0 28px 72px rgba(0,0,0,0.18); }
+  .stats-box { position: absolute; bottom: -32px; right: -24px; background: var(--blue); color: #fff; border-radius: 14px; padding: 24px 28px; display: flex; gap: 24px; box-shadow: 0 16px 48px rgba(13,50,100,0.4); }
+  .stat .n { font-family: 'Cormorant Garamond', serif; font-size: 2.1rem; line-height: 1; }
+  .stat .l { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; opacity: .7; margin-top: 5px; }
+  .stats-div { width: 1px; background: rgba(255,255,255,0.18); }
+  .about-text h2 { margin: 20px 0 26px; }
+  .about-body { font-size: 15px; line-height: 1.82; color: oklch(36% 0.03 230); margin-bottom: 38px; }
+  .host-card { display: flex; align-items: center; gap: 16px; padding: 18px 22px; background: #fff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
+  .host-avatar { width: 50px; height: 50px; border-radius: 50%; background: oklch(48% 0.13 225); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: #fff; }
+  .host-label { font-size: 10px; text-transform: uppercase; letter-spacing: .14em; color: var(--gold); margin-bottom: 3px; }
+  .host-name { font-size: 15px; font-weight: 500; }
+  .host-wa { margin-left: auto; display: flex; align-items: center; gap: 8px; background: var(--wa); color: #fff; padding: 9px 18px; border-radius: 22px; font-size: 13px; font-weight: 500; transition: transform .2s; }
+  .host-wa:hover { transform: scale(1.05); }
+  .host-wa svg { width: 15px; height: 15px; }
+
+  /* ROOMS */
+  .rooms { background: #fff; padding: 100px 0; }
+  .center-head { text-align: center; margin-bottom: 64px; }
+  .center-head h2 { margin: 16px 0; }
+  .center-head p { font-size: 15px; color: oklch(46% 0.04 230); max-width: 480px; margin: 0 auto; line-height: 1.65; }
+  .rooms-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; }
+  .room-card { border-radius: 16px; overflow: hidden; box-shadow: 0 4px 28px rgba(0,0,0,0.09); transition: transform .3s, box-shadow .3s; display: flex; flex-direction: column; }
+  .room-card:hover { transform: translateY(-8px); box-shadow: 0 16px 48px rgba(0,0,0,0.15); }
+  .room-img-wrap { height: 230px; overflow: hidden; position: relative; }
+  .room-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+  .room-card:hover .room-img-wrap img { transform: scale(1.07); }
+  .room-badge { position: absolute; top: 14px; right: 14px; color: #fff; font-size: 10px; letter-spacing: .1em; padding: 5px 12px; border-radius: 20px; text-transform: uppercase; font-weight: 500; }
+  .room-body { padding: 28px 24px 24px; display: flex; flex-direction: column; flex: 1; }
+  .room-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 12px; }
+  .room-head h3 { font-size: 1.35rem; font-weight: 400; line-height: 1.2; }
+  .room-size { font-size: 12px; color: oklch(52% 0.04 230); background: oklch(95% 0.012 72); padding: 4px 12px; border-radius: 20px; flex-shrink: 0; white-space: nowrap; }
+  .room-desc { font-size: 14px; line-height: 1.72; color: oklch(42% 0.04 230); margin-bottom: 14px; }
+  .room-guests { font-size: 13px; color: oklch(60% 0.04 230); margin-bottom: 24px; }
+  .room-cta { display: block; text-align: center; background: var(--blue); color: #fff; padding: 13px; border-radius: 8px; font-size: 13px; letter-spacing: .06em; margin-top: auto; transition: background .25s; }
+  .room-cta:hover { background: oklch(40% 0.14 232); }
+
+  /* GALLERY */
+  .gallery { background: oklch(94% 0.012 72); padding: 100px 0; }
+  .gallery .wrap { max-width: 1300px; }
+  .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; }
+  .gallery-item { aspect-ratio: 4/3; overflow: hidden; border-radius: 8px; cursor: pointer; }
+  .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .45s ease; }
+  .gallery-item:hover img { transform: scale(1.08); }
+
+  /* AMENITIES */
+  .amenities { background: #fff; padding: 80px 0; }
+  .amen-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); column-gap: 48px; }
+  .amen-item { display: flex; align-items: center; gap: 12px; padding: 14px 0; border-bottom: 1px solid oklch(92% 0.01 230); }
+  .amen-item svg { width: 15px; height: 15px; flex-shrink: 0; color: var(--gold); }
+  .amen-item span { font-size: 14px; color: oklch(28% 0.03 230); }
+
+  /* AREA */
+  .area { background: var(--blue); color: #fff; padding: 100px 0; }
+  .area-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+  .area h2 { margin: 20px 0 14px; line-height: 1.08; }
+  .area-sub { font-size: 1.05rem; color: oklch(78% 0.07 215); margin-bottom: 26px; font-style: italic; font-family: 'Cormorant Garamond', serif; }
+  .area-body { font-size: 15px; line-height: 1.82; color: rgba(255,255,255,0.78); margin-bottom: 40px; }
+  .nearby-title { font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
+  .nearby { display: flex; flex-direction: column; gap: 12px; }
+  .nearby div { display: flex; align-items: center; gap: 14px; font-size: 14px; color: rgba(255,255,255,0.85); }
+  .nearby .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+  .map { border-radius: 16px; overflow: hidden; height: 480px; box-shadow: 0 24px 64px rgba(0,0,0,0.35); }
+  .map iframe { width: 100%; height: 100%; border: none; display: block; }
+
+  /* REVIEWS */
+  .reviews { background: var(--cream); padding: 100px 0; }
+  .reviews-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; margin-bottom: 48px; }
+  .review-card { background: #fff; border-radius: 14px; padding: 24px; box-shadow: 0 2px 18px rgba(0,0,0,0.07); }
+  .review-top { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+  .review-avatar { width: 40px; height: 40px; border-radius: 50%; background: oklch(48% 0.13 225); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: #fff; }
+  .review-name { font-weight: 500; font-size: 14px; }
+  .review-country { font-size: 12px; color: oklch(58% 0.04 230); }
+  .review-score { background: var(--blue); color: #fff; padding: 3px 10px; border-radius: 14px; font-size: 13px; font-weight: 500; flex-shrink: 0; margin-left: auto; }
+  .review-text { font-size: 13px; line-height: 1.68; color: oklch(38% 0.03 230); font-style: italic; }
+  .review-date { margin-top: 14px; font-size: 11px; color: oklch(65% 0.04 230); }
+  .booking-link { text-align: center; margin-bottom: 56px; }
+  .booking-link a { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--blue); border: 1px solid oklch(82% 0.04 232); padding: 10px 22px; border-radius: 24px; transition: background .2s; }
+  .booking-link a:hover { background: #fff; }
+  .add-review { background: #fff; border-radius: 20px; padding: 48px; box-shadow: 0 6px 36px rgba(0,0,0,0.09); max-width: 640px; margin: 0 auto; }
+  .add-review h3 { font-size: 1.9rem; margin-bottom: 32px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .add-review label { display: block; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: oklch(52% 0.04 230); margin-bottom: 8px; }
+  .add-review input, .add-review select, .add-review textarea { width: 100%; padding: 11px 14px; border: 1px solid oklch(88% 0.01 230); border-radius: 8px; font-size: 14px; color: var(--ink); outline: none; background: #fff; }
+  .add-review textarea { resize: vertical; }
+  .add-review .field { margin-bottom: 24px; }
+  .submit-btn { width: 100%; background: var(--blue); color: #fff; padding: 14px; border-radius: 8px; font-size: 14px; letter-spacing: .06em; transition: background .25s; }
+  .submit-btn:hover { background: oklch(40% 0.14 232); }
+  .thanks { text-align: center; padding: 36px; background: oklch(95% 0.05 158); border-radius: 12px; }
+  .thanks .check { font-size: 2rem; margin-bottom: 12px; color: oklch(40% 0.14 158); }
+  .thanks p { font-size: 16px; font-weight: 500; color: oklch(28% 0.12 158); }
+
+  /* CONTACT */
+  .contact { background: var(--blue-deep); color: #fff; padding: 100px 0; }
+  .contact .wrap { max-width: 760px; text-align: center; }
+  .contact h2 { font-size: clamp(2.5rem, 5vw, 4rem); margin: 20px 0; line-height: 1.05; }
+  .contact-sub { font-size: 16px; color: rgba(255,255,255,0.72); margin-bottom: 52px; line-height: 1.65; }
+  .btn-wa-lg { display: inline-flex; align-items: center; gap: 14px; background: var(--wa); color: #fff; padding: 20px 52px; border-radius: 50px; font-size: 18px; font-weight: 500; letter-spacing: .04em; box-shadow: 0 6px 36px rgba(37,211,102,0.42); margin-bottom: 60px; transition: transform .25s, box-shadow .25s; }
+  .btn-wa-lg:hover { transform: translateY(-4px); box-shadow: 0 14px 44px rgba(37,211,102,0.58); }
+  .btn-wa-lg svg { width: 22px; height: 22px; flex-shrink: 0; }
+  .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 28px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 48px; }
+  .contact-grid .ci p.k { font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .contact-grid .ci a, .contact-grid .ci p.v { font-size: 13px; color: rgba(255,255,255,0.85); line-height: 1.7; white-space: pre-line; }
+
+  /* FOOTER */
+  footer { background: oklch(11% 0.02 230); padding: 32px 104px 32px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  footer .brand-f { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; letter-spacing: .1em; color: rgba(255,255,255,0.88); margin-bottom: 5px; }
+  footer .lic { font-size: 11px; color: rgba(255,255,255,0.35); }
+  .footer-right { display: flex; align-items: center; gap: 16px; }
+  .footer-right .fb { display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.5); transition: background .2s, color .2s; }
+  .footer-right .fb:hover { background: rgba(255,255,255,0.18); color: #fff; }
+  .footer-right .fb svg { width: 16px; height: 16px; }
+  .footer-right .copy { font-size: 12px; color: rgba(255,255,255,0.38); }
+  .made-by { font-size: 12px; color: rgba(255,255,255,0.5); letter-spacing: .04em; transition: color .2s; }
+  .made-by:hover { color: #fff; }
+  .dotsep { color: rgba(255,255,255,0.2); }
+
+  /* FLOATING WA */
+  .float-wa { position: fixed; bottom: 28px; right: 28px; z-index: 90; width: 58px; height: 58px; border-radius: 50%; background: var(--wa); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 24px rgba(37,211,102,0.45); transition: transform .25s, box-shadow .25s; }
+  .float-wa:hover { transform: scale(1.12); box-shadow: 0 8px 32px rgba(37,211,102,0.6); }
+  .float-wa svg { width: 28px; height: 28px; }
+
+  /* LIGHTBOX */
+  .lightbox { position: fixed; inset: 0; z-index: 9999; background: rgba(5,15,30,0.95); display: none; align-items: center; justify-content: center; }
+  .lightbox.open { display: flex; }
+  .lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; border-radius: 6px; animation: scaleIn .25s ease; }
+  .lightbox .close { position: absolute; top: 20px; right: 24px; background: rgba(255,255,255,0.15); color: #fff; font-size: 24px; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background .2s; }
+  .lightbox .close:hover { background: rgba(255,255,255,0.28); }
+
+  @media (max-width: 900px) {
+    .about-grid, .area-grid { grid-template-columns: 1fr; gap: 36px; }
+    .stats-box { position: static; right: auto; bottom: auto; margin-top: 16px; border-radius: 12px; }
+    .map { height: 280px; }
+    .about-img { height: 300px; }
+  }
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .wrap { padding-left: 20px; padding-right: 20px; }
+    .nav-inner { padding-left: 20px; padding-right: 20px; }
+    .about, .rooms, .gallery, .amenities, .area, .reviews, .contact { padding-top: 64px; padding-bottom: 64px; }
+    .hero-ctas { flex-direction: column; align-items: stretch; }
+    .hero-ctas .btn-wa, .hero-ctas .score-badge { justify-content: center; }
+    .add-review { padding: 32px 24px; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Floating WhatsApp -->
+<a class="float-wa" href="https://wa.me/306944771000" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <img src="" alt="Gallery photo" id="lightbox-img">
+  <button class="close" id="lightbox-close" aria-label="Close">&times;</button>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#home" class="brand">HOUSE MISTRAL</a>
+    <div class="nav-links">
+      <a href="#about" data-i18n="nav_about">About</a>
+      <a href="#rooms" data-i18n="nav_rooms">Rooms</a>
+      <a href="#gallery" data-i18n="nav_gallery">Gallery</a>
+      <a href="#area" data-i18n="nav_area">The Area</a>
+      <a href="#reviews" data-i18n="nav_reviews">Reviews</a>
+      <a href="#contact" data-i18n="nav_contact">Book</a>
+      <button class="lang-btn" id="lang-btn">ΕΛ</button>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#about" data-i18n="nav_about">About</a>
+  <a href="#rooms" data-i18n="nav_rooms">Rooms</a>
+  <a href="#gallery" data-i18n="nav_gallery">Gallery</a>
+  <a href="#area" data-i18n="nav_area">The Area</a>
+  <a href="#reviews" data-i18n="nav_reviews">Reviews</a>
+  <a href="#contact" data-i18n="nav_contact">Book</a>
+  <button class="lang-btn" id="lang-btn-mobile">ΕΛ</button>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-pre" data-i18n="hero_pre">Neos Marmaras · Sithonia · Greece</p>
+    <h1 data-i18n="hero_title">House Mistral</h1>
+    <p class="hero-sub" data-i18n="hero_sub">Where the Aegean meets your perfect stay</p>
+    <div class="hero-ctas">
+      <a class="btn-wa" href="https://wa.me/306944771000?text=Hello%2C%20I%27d%20like%20to%20enquire%20about%20staying%20at%20House%20Mistral." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        <span data-i18n="hero_cta">Book via WhatsApp</span>
+      </a>
+      <div class="score-badge">
+        <span class="num" data-i18n="hero_score">9.8</span>
+        <div>
+          <div class="lbl" data-i18n="hero_score_label">Exceptional</div>
+          <div class="sub" data-i18n="hero_reviews">383 reviews</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>Scroll</span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 4v12M4 10l6 6 6-6"/></svg></div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-img-wrap">
+      <img class="about-img" src="images/balcony-sea-1.jpg" alt="Balcony with sea view at House Mistral">
+      <div class="stats-box">
+        <div class="stat"><div class="n" data-i18n="stat1_n">9.8</div><div class="l" data-i18n="stat1_l">Guest score</div></div>
+        <div class="stats-div"></div>
+        <div class="stat"><div class="n" data-i18n="stat2_n">383</div><div class="l" data-i18n="stat2_l">Reviews</div></div>
+        <div class="stats-div"></div>
+        <div class="stat"><div class="n" data-i18n="stat3_n">9.4</div><div class="l" data-i18n="stat3_l">Family score</div></div>
+      </div>
+    </div>
+    <div class="about-text">
+      <p class="section-label" data-i18n="about_section_label">About the property</p>
+      <h2 class="section-title" data-i18n="about_title">A home above the bay</h2>
+      <p class="about-body" data-i18n="about_body">Set on a hillside 300 metres from the lively centre of Neos Marmaras, House Mistral offers bright self-catering apartments with private balconies overlooking Kassandra Gulf. Every stay is personally managed by host Manos — rated Exceptional with a score of 9.8 by over 380 guests.</p>
+      <div class="host-card">
+        <div class="host-avatar">M</div>
+        <div>
+          <div class="host-label" data-i18n="about_host_label">Your host</div>
+          <div class="host-name" data-i18n="about_host_name">Manos</div>
+        </div>
+        <a class="host-wa" href="https://wa.me/306944771000" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROOMS -->
+<section class="rooms" id="rooms">
+  <div class="wrap">
+    <div class="center-head">
+      <p class="section-label" data-i18n="rooms_section_label">Apartments</p>
+      <h2 class="section-title" data-i18n="rooms_title">Choose Your Space</h2>
+      <p data-i18n="rooms_sub">Three apartment types, all with private balconies and stunning views</p>
+    </div>
+    <div class="rooms-grid">
+      <div class="room-card">
+        <div class="room-img-wrap"><img src="images/room-double.jpg" alt="Standard Double Room"></div>
+        <div class="room-body">
+          <div class="room-head"><h3 data-i18n="r1_name">Standard Double Room</h3><span class="room-size" data-i18n="r1_size">24 m²</span></div>
+          <p class="room-desc" data-i18n="r1_desc">Double bed plus extra single, private kitchen and balcony. Ideal for couples or small families.</p>
+          <p class="room-guests" data-i18n="r1_guests">Up to 3 guests</p>
+          <a class="room-cta" href="https://wa.me/306944771000?text=Hello%2C%20I%27d%20like%20to%20book%20the%20Standard%20Double%20Room%20at%20House%20Mistral." target="_blank" rel="noopener" data-i18n="room_cta">Book via WhatsApp</a>
+        </div>
+      </div>
+      <div class="room-card">
+        <div class="room-img-wrap"><img src="images/room-seaview.jpg" alt="Sea View Studio"><div class="room-badge" style="background:var(--gold);" data-i18n="badge_sea">Sea View</div></div>
+        <div class="room-body">
+          <div class="room-head"><h3 data-i18n="r2_name">Sea View Studio</h3><span class="room-size" data-i18n="r2_size">22 m²</span></div>
+          <p class="room-desc" data-i18n="r2_desc">Full studio with panoramic sea views over Kassandra Gulf. Double bed, private bath and sunny balcony.</p>
+          <p class="room-guests" data-i18n="r2_guests">Up to 3 guests</p>
+          <a class="room-cta" href="https://wa.me/306944771000?text=Hello%2C%20I%27d%20like%20to%20book%20the%20Sea%20View%20Studio%20at%20House%20Mistral." target="_blank" rel="noopener" data-i18n="room_cta">Book via WhatsApp</a>
+        </div>
+      </div>
+      <div class="room-card">
+        <div class="room-img-wrap"><img src="images/room-family.jpg" alt="Family Studio"><div class="room-badge" style="background:var(--blue);" data-i18n="badge_largest">Largest</div></div>
+        <div class="room-body">
+          <div class="room-head"><h3 data-i18n="r3_name">Family Studio</h3><span class="room-size" data-i18n="r3_size">38 m²</span></div>
+          <p class="room-desc" data-i18n="r3_desc">Largest apartment — two singles and one large double. Perfect for up to 4 guests, with sweeping sea views.</p>
+          <p class="room-guests" data-i18n="r3_guests">Up to 4 guests</p>
+          <a class="room-cta" href="https://wa.me/306944771000?text=Hello%2C%20I%27d%20like%20to%20book%20the%20Family%20Studio%20at%20House%20Mistral." target="_blank" rel="noopener" data-i18n="room_cta">Book via WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="center-head">
+      <p class="section-label" data-i18n="gallery_section_label">Gallery</p>
+      <h2 class="section-title" data-i18n="gallery_title">See the Space</h2>
+      <p data-i18n="gallery_sub">Apartments, balconies and views of House Mistral</p>
+    </div>
+    <div class="gallery-grid" id="gallery-grid">
+      <div class="gallery-item"><img src="images/exterior.jpg" alt="House Mistral exterior" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/sea-view-sunny.jpg" alt="Panoramic sea view over Kassandra Gulf" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/panorama-sea.jpg" alt="Panoramic bay view" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/balcony-sea-1.jpg" alt="Balcony with sea view" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/balcony-sea-2.jpg" alt="Sea-view balcony breakfast" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/balcony-view.jpg" alt="Private balcony view" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/room-double.jpg" alt="Bright double room" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/room-family.jpg" alt="Family studio with three beds" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/room-seaview.jpg" alt="Sea view bedroom" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/room-studio.jpg" alt="Studio interior" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/bedroom-2.jpg" alt="Double bedroom" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/bathroom-1.jpg" alt="Renovated bathroom" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/bathroom-2.jpg" alt="Modern bathroom with LED mirror" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/balcony-table.jpg" alt="Balcony table" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/reception.jpg" alt="Reception with handcrafted tree wall" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/terrace.jpg" alt="Terrace lounge with hanging chair" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/view-window.jpg" alt="View from the apartment" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/bathroom-3.jpg" alt="Bathroom" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- AMENITIES -->
+<section class="amenities">
+  <div class="wrap">
+    <div class="center-head" style="margin-bottom:52px;">
+      <p class="section-label" data-i18n="amen_section_label">Amenities</p>
+      <h2 class="section-title" data-i18n="amen_title">Everything You Need</h2>
+    </div>
+    <div class="amen-grid" id="amen-grid"></div>
+  </div>
+</section>
+
+<!-- AREA -->
+<section class="area" id="area">
+  <div class="wrap area-grid">
+    <div>
+      <p class="section-label" data-i18n="area_section_label">Location</p>
+      <h2 class="section-title" style="color:#fff;" data-i18n="area_title">Neos Marmaras</h2>
+      <p class="area-sub" data-i18n="area_sub">A gem on the Sithonian coast</p>
+      <p class="area-body" data-i18n="area_body">Neos Marmaras is a charming harbour town on the Sithonian peninsula of Halkidiki. Azure waters stretch to the horizon from your balcony. Paradisos beach is just 900 m away, the marina and local tavernas are a short walk, and the pristine beaches of Toroni and Nikiti are 20 km.</p>
+      <p class="nearby-title" data-i18n="nearby_title">What's nearby</p>
+      <div class="nearby">
+        <div><span class="dot"></span><span data-i18n="d1">300 m — Town centre &amp; marina</span></div>
+        <div><span class="dot"></span><span data-i18n="d2">900 m — Paradisos Beach</span></div>
+        <div><span class="dot"></span><span data-i18n="d3">1.2 km — Neos Marmaras Beach</span></div>
+        <div><span class="dot"></span><span data-i18n="d4">400 m — Cafés &amp; restaurants</span></div>
+        <div><span class="dot"></span><span data-i18n="d5">2.1 km — Porto Carras Beach</span></div>
+        <div><span class="dot"></span><span data-i18n="d6">150 m — Bus stop</span></div>
+      </div>
+    </div>
+    <div class="map">
+      <iframe src="https://maps.google.com/maps?q=House+Mistral+Neos+Marmaras&ll=40.0974641,23.7828939&z=17&output=embed" loading="lazy" title="House Mistral location in Neos Marmaras"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="center-head">
+      <p class="section-label" data-i18n="rev_section_label">Reviews</p>
+      <h2 class="section-title" data-i18n="rev_title">What Our Guests Say</h2>
+      <p data-i18n="rev_sub">Rated Exceptional · 9.8 / 10 on Booking.com</p>
+    </div>
+    <div class="reviews-grid" id="reviews-grid"></div>
+    <div class="booking-link">
+      <a href="https://www.booking.com/hotel/gr/house-mistral.html" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" style="width:15px;height:15px;"><path d="M7 17l5-5 5 5M7 7h10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-i18n="booking_cta">See all 383 reviews on Booking.com</span>
+      </a>
+    </div>
+    <div class="add-review" style="text-align:center;">
+      <h3 data-i18n="rev_cta_title">Enjoyed your stay?</h3>
+      <p style="font-size:15px;line-height:1.7;color:oklch(46% 0.04 230);max-width:440px;margin:14px auto 30px;" data-i18n="rev_cta_sub">Your review helps other travellers discover House Mistral — thank you for sharing it on Booking.com.</p>
+      <a href="https://www.booking.com/hotel/gr/house-mistral.html" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;background:var(--blue);color:#fff;padding:15px 34px;border-radius:50px;font-size:15px;letter-spacing:.04em;transition:background .25s;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" style="width:17px;height:17px;"><path d="M12 17.27l-5.18 3.04 1.4-5.89L3 9.49l6-.52L12 3.5l3 5.47 6 .52-5.22 4.93 1.4 5.89z" stroke-linejoin="round"/></svg>
+        <span data-i18n="rev_cta_btn">Leave a review on Booking.com</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <p class="section-label" data-i18n="book_section_label">Book</p>
+    <h2 data-i18n="book_title">Book Your Stay</h2>
+    <p class="contact-sub" data-i18n="book_sub">Contact us directly on WhatsApp for availability, dates and the best rates.</p>
+    <a class="btn-wa-lg" href="https://wa.me/306944771000?text=Hello%2C%20I%27d%20like%20to%20enquire%20about%20staying%20at%20House%20Mistral." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      <span data-i18n="book_cta">Chat on WhatsApp</span>
+    </a>
+    <div class="contact-grid">
+      <div class="ci"><p class="k">Phone</p><a href="tel:+306944771000">+30 694 477 1000</a></div>
+      <div class="ci"><p class="k">Email</p><a href="mailto:housemistral@gmail.com">housemistral@gmail.com</a></div>
+      <div class="ci"><p class="k" data-i18n="book_address_label">Address</p><p class="v" data-i18n="book_address">Neos Marmaras, 63081
+Sithonia, Greece</p></div>
+      <div class="ci"><p class="k" data-i18n="book_hours_label">Check-in/out</p><p class="v"><span data-i18n="book_checkin">Check-in: 14:00 – 22:00</span><br><span data-i18n="book_checkout">Check-out: 07:00 – 11:00</span></p></div>
+      <div class="ci"><p class="k" data-i18n="book_extras_label">Extras</p><p class="v" data-i18n="book_note">Pets welcome · Free parking · No advance payment</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <p class="brand-f">HOUSE MISTRAL</p>
+    <p class="lic" data-i18n="footer_lic">Licence no. 0938K131K0399400</p>
+  </div>
+  <div class="footer-right">
+    <a class="fb" href="https://www.facebook.com/p/House-Mistral-Sithonia-Neos-Marmaras-100089791796513/" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+    </a>
+    <p class="copy" data-i18n="footer_copy">© 2026 House Mistral · Neos Marmaras, Greece</p>
+    <span class="dotsep">·</span>
+    <a class="made-by" href="https://pagolander.com" target="_blank" rel="noopener" data-i18n="footer_made">Made by Pagolander</a>
+  </div>
+</footer>
+
+<script>
+const I18N = {
+  en: {
+    nav_about: 'About', nav_rooms: 'Rooms', nav_gallery: 'Gallery', nav_area: 'The Area', nav_reviews: 'Reviews', nav_contact: 'Book',
+    hero_pre: 'Neos Marmaras · Sithonia · Greece', hero_title: 'House Mistral', hero_sub: 'Where the Aegean meets your perfect stay',
+    hero_cta: 'Book via WhatsApp', hero_score: '9.8', hero_score_label: 'Exceptional', hero_reviews: '383 reviews',
+    about_section_label: 'About the property', about_title: 'A home above the bay',
+    about_body: 'Set on a hillside 300 metres from the lively centre of Neos Marmaras, House Mistral offers bright self-catering apartments with private balconies overlooking Kassandra Gulf. Every stay is personally managed by host Manos — rated Exceptional with a score of 9.8 by over 380 guests.',
+    about_host_label: 'Your host', about_host_name: 'Manos',
+    stat1_n: '9.8', stat1_l: 'Guest score', stat2_n: '383', stat2_l: 'Reviews', stat3_n: '9.4', stat3_l: 'Family score',
+    rooms_section_label: 'Apartments', rooms_title: 'Choose Your Space', rooms_sub: 'Three apartment types, all with private balconies and stunning views',
+    r1_name: 'Standard Double Room', r1_size: '24 m²', r1_desc: 'Double bed plus extra single, private kitchen and balcony. Ideal for couples or small families.', r1_guests: 'Up to 3 guests',
+    r2_name: 'Sea View Studio', r2_size: '22 m²', r2_desc: 'Full studio with panoramic sea views over Kassandra Gulf. Double bed, private bath and sunny balcony.', r2_guests: 'Up to 3 guests',
+    r3_name: 'Family Studio', r3_size: '38 m²', r3_desc: 'Largest apartment — two singles and one large double. Perfect for up to 4 guests, with sweeping sea views.', r3_guests: 'Up to 4 guests',
+    room_cta: 'Book via WhatsApp', badge_sea: 'Sea View', badge_largest: 'Largest',
+    gallery_section_label: 'Gallery', gallery_title: 'See the Space', gallery_sub: 'Apartments, balconies and views of House Mistral',
+    amen_section_label: 'Amenities', amen_title: 'Everything You Need',
+    area_section_label: 'Location', area_title: 'Neos Marmaras', area_sub: 'A gem on the Sithonian coast',
+    area_body: 'Neos Marmaras is a charming harbour town on the Sithonian peninsula of Halkidiki. Azure waters stretch to the horizon from your balcony. Paradisos beach is just 900 m away, the marina and local tavernas are a short walk, and the pristine beaches of Toroni and Nikiti are 20 km.',
+    nearby_title: "What's nearby",
+    d1: '300 m — Town centre & marina', d2: '900 m — Paradisos Beach', d3: '1.2 km — Neos Marmaras Beach', d4: '400 m — Cafés & restaurants', d5: '2.1 km — Porto Carras Beach', d6: '150 m — Bus stop',
+    rev_section_label: 'Reviews', rev_title: 'What Our Guests Say', rev_sub: 'Rated Exceptional · 9.8 / 10 on Booking.com',
+    booking_cta: 'See all 383 reviews on Booking.com',
+    rev_cta_title: 'Enjoyed your stay?', rev_cta_sub: 'Your review helps other travellers discover House Mistral — thank you for sharing it on Booking.com.', rev_cta_btn: 'Leave a review on Booking.com',
+    book_section_label: 'Book', book_title: 'Book Your Stay', book_sub: 'Contact us directly on WhatsApp for availability, dates and the best rates.',
+    book_cta: 'Chat on WhatsApp', book_address_label: 'Address', book_address: 'Neos Marmaras, 63081\nSithonia, Greece',
+    book_hours_label: 'Check-in/out', book_checkin: 'Check-in: 14:00 – 22:00', book_checkout: 'Check-out: 07:00 – 11:00',
+    book_extras_label: 'Extras', book_note: 'Pets welcome · Free parking · No advance payment',
+    footer_copy: '© 2026 House Mistral · Neos Marmaras, Greece', footer_lic: 'Licence no. 0938K131K0399400', footer_made: 'Made by Pagolander',
+  },
+  gr: {
+    nav_about: 'Σχετικά', nav_rooms: 'Δωμάτια', nav_gallery: 'Γκαλερί', nav_area: 'Η Περιοχή', nav_reviews: 'Κριτικές', nav_contact: 'Κράτηση',
+    hero_pre: 'Νέος Μαρμαράς · Σιθωνία · Ελλάδα', hero_title: 'House Mistral', hero_sub: 'Εκεί που το Αιγαίο συναντά τις ιδανικές διακοπές σας',
+    hero_cta: 'Κράτηση μέσω WhatsApp', hero_score: '9,8', hero_score_label: 'Εξαιρετικό', hero_reviews: '383 κριτικές',
+    about_section_label: 'Σχετικά με την ιδιοκτησία', about_title: 'Ένα σπίτι πάνω από τον κόλπο',
+    about_body: 'Το House Mistral βρίσκεται σε λόφο, 300 μέτρα από το κέντρο του Νέου Μαρμαρά, με ιδιωτικά μπαλκόνια και θέα στον Κόλπο Κασσάνδρας. Ο Μάνος φροντίζει προσωπικά για κάθε φιλοξενούμενο — αξιολογήθηκε ως Εξαιρετικό με 9,8 από πάνω από 380 επισκέπτες.',
+    about_host_label: 'Ο οικοδεσπότης σας', about_host_name: 'Μάνος',
+    stat1_n: '9,8', stat1_l: 'Βαθμολογία', stat2_n: '383', stat2_l: 'Κριτικές', stat3_n: '9,4', stat3_l: 'Βαθμός Οικογένειας',
+    rooms_section_label: 'Διαμερίσματα', rooms_title: 'Επιλέξτε τον Χώρο σας', rooms_sub: 'Τρεις τύποι διαμερισμάτων, όλα με ιδιωτικά μπαλκόνια και εκπληκτική θέα',
+    r1_name: 'Τυπικό Δίκλινο', r1_size: '24 τ.μ.', r1_desc: 'Διπλό κρεβάτι και extra μονό, ιδιωτική κουζίνα και μπαλκόνι. Ιδανικό για ζευγάρια ή μικρές οικογένειες.', r1_guests: 'Έως 3 άτομα',
+    r2_name: 'Στούντιο με Θέα Θάλασσα', r2_size: '22 τ.μ.', r2_desc: 'Πλήρες στούντιο με πανοραμική θέα στον Κόλπο Κασσάνδρας. Διπλό κρεβάτι, ιδιωτικό μπάνιο και μπαλκόνι.', r2_guests: 'Έως 3 άτομα',
+    r3_name: 'Οικογενειακό Στούντιο', r3_size: '38 τ.μ.', r3_desc: 'Το μεγαλύτερο διαμέρισμα — δύο μονά και ένα διπλό κρεβάτι. Ιδανικό για 4 άτομα, με εκπληκτική θέα θάλασσα.', r3_guests: 'Έως 4 άτομα',
+    room_cta: 'Κράτηση μέσω WhatsApp', badge_sea: 'Θέα Θάλασσα', badge_largest: 'Μεγαλύτερο',
+    gallery_section_label: 'Φωτογραφίες', gallery_title: 'Δείτε τον Χώρο', gallery_sub: 'Διαμερίσματα, μπαλκόνια και θέες του House Mistral',
+    amen_section_label: 'Παροχές', amen_title: 'Όλα όσα Χρειάζεστε',
+    area_section_label: 'Τοποθεσία', area_title: 'Νέος Μαρμαράς', area_sub: 'Ένα στολίδι στη Σιθωνία',
+    area_body: 'Ο Νέος Μαρμαράς είναι ένα γοητευτικό λιμανάκι στη Σιθωνία Χαλκιδικής. Το γαλάζιο Αιγαίο απλώνεται ως τον ορίζοντα από το μπαλκόνι σας. Η παραλία Παράδεισος απέχει 900 μ., η μαρίνα και οι τοπικές ταβέρνες βρίσκονται σε κοντινή απόσταση.',
+    nearby_title: 'Κοντά',
+    d1: '300 μ. — Κέντρο & μαρίνα', d2: '900 μ. — Παραλία Παράδεισος', d3: '1,2 χλμ. — Παραλία Ν. Μαρμαρά', d4: '400 μ. — Καφές & εστιατόρια', d5: '2,1 χλμ. — Παραλία Porto Carras', d6: '150 μ. — Στάση λεωφορείου',
+    rev_section_label: 'Κριτικές', rev_title: 'Τι Λένε οι Επισκέπτες μας', rev_sub: 'Αξιολογήθηκε ως Εξαιρετικό · 9,8 / 10 στο Booking.com',
+    booking_cta: 'Δείτε και τις 383 κριτικές στο Booking.com',
+    rev_cta_title: 'Σας άρεσε η διαμονή σας;', rev_cta_sub: 'Η κριτική σας βοηθά άλλους ταξιδιώτες να ανακαλύψουν το House Mistral — ευχαριστούμε που τη μοιράζεστε στο Booking.com.', rev_cta_btn: 'Αφήστε μια κριτική στο Booking.com',
+    book_section_label: 'Κράτηση', book_title: 'Κάντε Κράτηση', book_sub: 'Επικοινωνήστε μαζί μας απευθείας στο WhatsApp για διαθεσιμότητα και τιμές.',
+    book_cta: 'WhatsApp', book_address_label: 'Διεύθυνση', book_address: 'Νέος Μαρμαράς, 63081\nΣιθωνία, Ελλάδα',
+    book_hours_label: 'Check-in/out', book_checkin: 'Check-in: 14:00 – 22:00', book_checkout: 'Check-out: 07:00 – 11:00',
+    book_extras_label: 'Έξτρα', book_note: 'Κατοικίδια ευπρόσδεκτα · Δωρεάν πάρκινγκ · Χωρίς προκαταβολή',
+    footer_copy: '© 2026 House Mistral · Νέος Μαρμαράς, Ελλάδα', footer_lic: 'Άδεια αρ. 0938K131K0399400', footer_made: 'Σχεδιασμός από Pagolander',
+  }
+};
+
+const AMENITIES = {
+  en: ['Free WiFi throughout','Air conditioning','Private kitchen & fridge','Private balcony / terrace','Free parking nearby','Pets welcome (on request)','Private bathroom','Flat-screen TV & Netflix','Coffee machine','Kitchenware & kettle','Family rooms available','No smoking','Paradisos Beach 900 m','Town centre 300 m','Bus stop 150 m','Airport transfer (extra charge)'],
+  gr: ['Δωρεάν WiFi παντού','Κλιματισμός','Ιδιωτική κουζίνα & ψυγείο','Ιδιωτικό μπαλκόνι / βεράντα','Δωρεάν πάρκινγκ κοντά','Κατοικίδια (κατόπιν αιτήματος)','Ιδιωτικό μπάνιο','Flat-screen TV & Netflix','Μηχανή καφέ','Σκεύη & βραστήρας','Οικογενειακά δωμάτια','Χώρος μη καπνιστών','Παραλία Παράδεισος 900 μ.','Κέντρο πόλης 300 μ.','Στάση λεωφορείου 150 μ.','Μεταφορά αεροδρομίου (επιπλέον)']
+};
+
+const BUILTIN_REVIEWS = [
+  { initials: 'H', name: 'Hreniuc', country: 'Romania 🇷🇴', score: '10', date: 'Jul 2025', text: 'Great location — a few minutes walk from the port, centre, shops, restaurants. Cleaning every 2 days and the owner is very helpful. 10/10! We will definitely come back.' },
+  { initials: 'C', name: 'Corduneanu', country: 'Romania 🇷🇴', score: '10', date: 'Jul 2025', text: 'Very clean — cleaning every 2 days. The view from the balcony is STUNNING. Manos is very sociable and helpful. We will definitely return!' },
+  { initials: 'A', name: 'Alexandra', country: 'Romania 🇷🇴', score: '10', date: 'Jun 2025', text: 'Everything was excellent. The host is very friendly, the room exactly as in the photos with renovated bathroom and an amazing sea view!' },
+  { initials: 'C', name: 'Claudia', country: 'Romania 🇷🇴', score: '10', date: 'Jun 2025', text: 'Extraordinary cleanliness. Quality and comfortable mattresses. Stunning view. The owner is very professional and helpful.' },
+  { initials: 'L', name: 'Laurentiu', country: 'Romania 🇷🇴', score: '10', date: 'May 2025', text: 'Exceptional location! Very friendly host! The apartment has everything you need. Thank you, Mr. Manos!' },
+  { initials: 'V', name: 'Valentina', country: 'Romania 🇷🇴', score: '10', date: 'Sep 2025', text: 'Splendid view, cleanliness, amenities and staff. Highly recommended!' },
+];
+
+let lang = 'en';
+
+function applyLang() {
+  document.documentElement.lang = (lang === 'gr') ? 'el' : 'en';
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const v = I18N[lang][el.dataset.i18n];
+    if (v != null) el.textContent = v;
+  });
+  document.querySelectorAll('#lang-btn, #lang-btn-mobile').forEach(b => b.textContent = (lang === 'en') ? 'ΕΛ' : 'EN');
+  renderAmenities();
+}
+
+function toggleLang() { lang = (lang === 'en') ? 'gr' : 'en'; applyLang(); }
+
+function renderAmenities() {
+  const grid = document.getElementById('amen-grid');
+  grid.innerHTML = AMENITIES[lang].map(a =>
+    '<div class="amen-item"><svg viewBox="0 0 16 16" fill="none"><path d="M2.5 8l4 4 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span></span></div>'
+  ).join('');
+  grid.querySelectorAll('.amen-item span').forEach((s, i) => s.textContent = AMENITIES[lang][i]);
+}
+
+function escapeHtml(str) {
+  const d = document.createElement('div'); d.textContent = str; return d.innerHTML;
+}
+
+function renderReviews() {
+  document.getElementById('reviews-grid').innerHTML = BUILTIN_REVIEWS.map(r =>
+    '<div class="review-card"><div class="review-top">' +
+      '<div class="review-avatar">' + escapeHtml(r.initials) + '</div>' +
+      '<div><div class="review-name">' + escapeHtml(r.name) + '</div><div class="review-country">' + escapeHtml(r.country || '') + '</div></div>' +
+      '<div class="review-score">' + escapeHtml(r.score) + '</div>' +
+    '</div><p class="review-text">"' + escapeHtml(r.text) + '"</p>' +
+    '<div class="review-date">' + escapeHtml(r.date) + '</div></div>'
+  ).join('');
+}
+
+// Init
+document.getElementById('lang-btn').addEventListener('click', toggleLang);
+document.getElementById('lang-btn-mobile').addEventListener('click', () => { toggleLang(); closeMenu(); });
+
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 70); }, { passive: true });
+
+const mobileMenu = document.getElementById('mobile-menu');
+function closeMenu() { mobileMenu.classList.remove('open'); }
+document.getElementById('hamburger').addEventListener('click', () => mobileMenu.classList.toggle('open'));
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+// Lightbox
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+document.querySelectorAll('.gallery-item img').forEach(img => {
+  img.parentElement.addEventListener('click', () => { lightboxImg.src = img.src; lightbox.classList.add('open'); });
+});
+function closeLightbox() { lightbox.classList.remove('open'); lightboxImg.src = ''; }
+document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+renderAmenities();
+renderReviews();
+</script>
+</body>
+</html>

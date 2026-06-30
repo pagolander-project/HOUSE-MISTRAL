@@ -233,6 +233,12 @@
   .lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; border-radius: 6px; animation: scaleIn .25s ease; }
   .lightbox .close { position: absolute; top: 20px; right: 24px; background: rgba(255,255,255,0.15); color: #fff; font-size: 24px; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background .2s; }
   .lightbox .close:hover { background: rgba(255,255,255,0.28); }
+  .lb-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.15); color: #fff; font-size: 36px; width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background .2s; border: none; cursor: pointer; }
+  .lb-nav:hover { background: rgba(255,255,255,0.3); }
+  .lb-prev { left: 16px; }
+  .lb-next { right: 16px; }
+  .lb-counter { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.6); font-size: 13px; letter-spacing: .08em; white-space: nowrap; pointer-events: none; }
+  .room-card[data-gallery] { cursor: pointer; }
 
   @media (max-width: 900px) {
     .about-grid, .area-grid { grid-template-columns: 1fr; gap: 36px; }
@@ -264,6 +270,9 @@
 <div class="lightbox" id="lightbox">
   <img src="" alt="Gallery photo" id="lightbox-img">
   <button class="close" id="lightbox-close" aria-label="Close">&times;</button>
+  <button class="lb-nav lb-prev" id="lightbox-prev" aria-label="Previous">&#8249;</button>
+  <button class="lb-nav lb-next" id="lightbox-next" aria-label="Next">&#8250;</button>
+  <div class="lb-counter" id="lightbox-counter"></div>
 </div>
 
 <!-- NAV -->
@@ -362,17 +371,17 @@
       <p data-i18n="rooms_sub">Three apartment types, all with private balconies and stunning views</p>
     </div>
     <div class="rooms-grid">
-      <div class="room-card">
-        <div class="room-img-wrap"><img src="images/room-double.jpg" alt="Standard Double Room"></div>
+      <div class="room-card" data-gallery="studio">
+        <div class="room-img-wrap"><img src="images/studio/1.jpg" alt="Double &amp; Triple Studio"></div>
         <div class="room-body">
-          <div class="room-head"><h3 data-i18n="r1_name">Standard Double Room</h3><span class="room-size" data-i18n="r1_size">24 m²</span></div>
-          <p class="room-desc" data-i18n="r1_desc">Double bed plus extra single, private kitchen and balcony. Ideal for couples or small families.</p>
+          <div class="room-head"><h3 data-i18n="r1_name">Double &amp; Triple Studio</h3><span class="room-size" data-i18n="r1_size">24 m²</span></div>
+          <p class="room-desc" data-i18n="r1_desc">Double bed and extra single bed, private kitchen and balcony. Ideal for couples or small families.</p>
           <p class="room-guests" data-i18n="r1_guests">Up to 3 guests</p>
-          <a class="room-cta" href="https://wa.me/306944771000?text=Hello%2C%20I%27d%20like%20to%20book%20the%20Standard%20Double%20Room%20at%20House%20Mistral." target="_blank" rel="noopener" data-i18n="room_cta">Book via WhatsApp</a>
+          <a class="room-cta" href="https://wa.me/306944771000?text=Hello%2C%20I%27d%20like%20to%20book%20the%20Double%20%26%20Triple%20Studio%20at%20House%20Mistral." target="_blank" rel="noopener" data-i18n="room_cta">Book via WhatsApp</a>
         </div>
       </div>
-      <div class="room-card">
-        <div class="room-img-wrap"><img src="images/room-seaview.jpg" alt="Sea View Studio"><div class="room-badge" style="background:var(--gold);" data-i18n="badge_sea">Sea View</div></div>
+      <div class="room-card" data-gallery="seaview">
+        <div class="room-img-wrap"><img src="images/seaview/1.jpg" alt="Sea View Studio"><div class="room-badge" style="background:var(--gold);" data-i18n="badge_sea">Sea View</div></div>
         <div class="room-body">
           <div class="room-head"><h3 data-i18n="r2_name">Sea View Studio</h3><span class="room-size" data-i18n="r2_size">22 m²</span></div>
           <p class="room-desc" data-i18n="r2_desc">Full studio with panoramic sea views over Kassandra Gulf. Double bed, private bath and sunny balcony.</p>
@@ -380,13 +389,13 @@
           <a class="room-cta" href="https://wa.me/306944771000?text=Hello%2C%20I%27d%20like%20to%20book%20the%20Sea%20View%20Studio%20at%20House%20Mistral." target="_blank" rel="noopener" data-i18n="room_cta">Book via WhatsApp</a>
         </div>
       </div>
-      <div class="room-card">
-        <div class="room-img-wrap"><img src="images/room-family.jpg" alt="Family Studio"><div class="room-badge" style="background:var(--blue);" data-i18n="badge_largest">Largest</div></div>
+      <div class="room-card" data-gallery="apt2rooms">
+        <div class="room-img-wrap"><img src="images/apt2rooms/1.jpg" alt="Two-Bedroom Apartment"><div class="room-badge" style="background:var(--blue);" data-i18n="badge_2rooms">2 Rooms</div></div>
         <div class="room-body">
-          <div class="room-head"><h3 data-i18n="r3_name">Family Studio</h3><span class="room-size" data-i18n="r3_size">38 m²</span></div>
-          <p class="room-desc" data-i18n="r3_desc">Largest apartment — two singles and one large double. Perfect for up to 4 guests, with sweeping sea views.</p>
+          <div class="room-head"><h3 data-i18n="r3_name">Two-Bedroom Apartment</h3><span class="room-size" data-i18n="r3_size">38 m²</span></div>
+          <p class="room-desc" data-i18n="r3_desc">Two separate bedrooms with double beds, fully equipped kitchen and private balcony. Includes desk and coffee machine.</p>
           <p class="room-guests" data-i18n="r3_guests">Up to 4 guests</p>
-          <a class="room-cta" href="https://wa.me/306944771000?text=Hello%2C%20I%27d%20like%20to%20book%20the%20Family%20Studio%20at%20House%20Mistral." target="_blank" rel="noopener" data-i18n="room_cta">Book via WhatsApp</a>
+          <a class="room-cta" href="https://wa.me/306944771000?text=Hello%2C%20I%27d%20like%20to%20book%20the%20Two-Bedroom%20Apartment%20at%20House%20Mistral." target="_blank" rel="noopener" data-i18n="room_cta">Book via WhatsApp</a>
         </div>
       </div>
     </div>
@@ -408,9 +417,9 @@
       <div class="gallery-item"><img src="images/balcony-sea-1.jpg" alt="Balcony with sea view" loading="lazy"></div>
       <div class="gallery-item"><img src="images/balcony-sea-2.jpg" alt="Sea-view balcony breakfast" loading="lazy"></div>
       <div class="gallery-item"><img src="images/balcony-view.jpg" alt="Private balcony view" loading="lazy"></div>
-      <div class="gallery-item"><img src="images/room-double.jpg" alt="Bright double room" loading="lazy"></div>
-      <div class="gallery-item"><img src="images/room-family.jpg" alt="Family studio with three beds" loading="lazy"></div>
-      <div class="gallery-item"><img src="images/room-seaview.jpg" alt="Sea view bedroom" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/studio/2.jpg" alt="Double &amp; Triple Studio" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/apt2rooms/2.jpg" alt="Two-Bedroom Apartment" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/seaview/2.jpg" alt="Sea View Studio" loading="lazy"></div>
       <div class="gallery-item"><img src="images/room-studio.jpg" alt="Studio interior" loading="lazy"></div>
       <div class="gallery-item"><img src="images/bedroom-2.jpg" alt="Double bedroom" loading="lazy"></div>
       <div class="gallery-item"><img src="images/bathroom-1.jpg" alt="Renovated bathroom" loading="lazy"></div>
@@ -476,10 +485,10 @@
     </div>
     <div class="add-review" style="text-align:center;">
       <h3 data-i18n="rev_cta_title">Enjoyed your stay?</h3>
-      <p style="font-size:15px;line-height:1.7;color:oklch(46% 0.04 230);max-width:440px;margin:14px auto 30px;" data-i18n="rev_cta_sub">Your review helps other travellers discover House Mistral — thank you for sharing it on Booking.com.</p>
-      <a href="https://www.booking.com/hotel/gr/house-mistral.html" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;background:var(--blue);color:#fff;padding:15px 34px;border-radius:50px;font-size:15px;letter-spacing:.04em;transition:background .25s;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" style="width:17px;height:17px;"><path d="M12 17.27l-5.18 3.04 1.4-5.89L3 9.49l6-.52L12 3.5l3 5.47 6 .52-5.22 4.93 1.4 5.89z" stroke-linejoin="round"/></svg>
-        <span data-i18n="rev_cta_btn">Leave a review on Booking.com</span>
+      <p style="font-size:15px;line-height:1.7;color:oklch(46% 0.04 230);max-width:440px;margin:14px auto 30px;" data-i18n="rev_cta_sub">Your review helps other travellers discover House Mistral — thank you for sharing it on Google.</p>
+      <a href="https://g.page/r/CdevydEXX_xEEBM/review" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;background:var(--blue);color:#fff;padding:15px 34px;border-radius:50px;font-size:15px;letter-spacing:.04em;transition:background .25s;">
+        <svg viewBox="0 0 24 24" style="width:17px;height:17px;" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 17.27l-5.18 3.04 1.4-5.89L3 9.49l6-.52L12 3.5l3 5.47 6 .52-5.22 4.93 1.4 5.89z" stroke-linejoin="round"/></svg>
+        <span data-i18n="rev_cta_btn">Leave a review on Google</span>
       </a>
     </div>
   </div>
@@ -533,10 +542,10 @@ const I18N = {
     about_host_label: 'Your host', about_host_name: 'Manos',
     stat1_n: '9.8', stat1_l: 'Guest score', stat2_n: '383', stat2_l: 'Reviews', stat3_n: '9.4', stat3_l: 'Family score',
     rooms_section_label: 'Apartments', rooms_title: 'Choose Your Space', rooms_sub: 'Three apartment types, all with private balconies and stunning views',
-    r1_name: 'Standard Double Room', r1_size: '24 m²', r1_desc: 'Double bed plus extra single, private kitchen and balcony. Ideal for couples or small families.', r1_guests: 'Up to 3 guests',
+    r1_name: 'Double & Triple Studio', r1_size: '24 m²', r1_desc: 'Double bed and extra single bed, private kitchen and balcony. Ideal for couples or small families.', r1_guests: 'Up to 3 guests',
     r2_name: 'Sea View Studio', r2_size: '22 m²', r2_desc: 'Full studio with panoramic sea views over Kassandra Gulf. Double bed, private bath and sunny balcony.', r2_guests: 'Up to 3 guests',
-    r3_name: 'Family Studio', r3_size: '38 m²', r3_desc: 'Largest apartment — two singles and one large double. Perfect for up to 4 guests, with sweeping sea views.', r3_guests: 'Up to 4 guests',
-    room_cta: 'Book via WhatsApp', badge_sea: 'Sea View', badge_largest: 'Largest',
+    r3_name: 'Two-Bedroom Apartment', r3_size: '38 m²', r3_desc: 'Two separate bedrooms with double beds, fully equipped kitchen and private balcony. Includes desk and coffee machine.', r3_guests: 'Up to 4 guests',
+    room_cta: 'Book via WhatsApp', badge_sea: 'Sea View', badge_2rooms: '2 Rooms',
     gallery_section_label: 'Gallery', gallery_title: 'See the Space', gallery_sub: 'Apartments, balconies and views of House Mistral',
     amen_section_label: 'Amenities', amen_title: 'Everything You Need',
     area_section_label: 'Location', area_title: 'Neos Marmaras', area_sub: 'A gem on the Sithonian coast',
@@ -545,7 +554,7 @@ const I18N = {
     d1: '300 m — Town centre & marina', d2: '900 m — Paradisos Beach', d3: '1.2 km — Neos Marmaras Beach', d4: '400 m — Cafés & restaurants', d5: '2.1 km — Porto Carras Beach', d6: '150 m — Bus stop',
     rev_section_label: 'Reviews', rev_title: 'What Our Guests Say', rev_sub: 'Rated Exceptional · 9.8 / 10 on Booking.com',
     booking_cta: 'See all 383 reviews on Booking.com',
-    rev_cta_title: 'Enjoyed your stay?', rev_cta_sub: 'Your review helps other travellers discover House Mistral — thank you for sharing it on Booking.com.', rev_cta_btn: 'Leave a review on Booking.com',
+    rev_cta_title: 'Enjoyed your stay?', rev_cta_sub: 'Your review helps other travellers discover House Mistral — thank you for sharing it on Google.', rev_cta_btn: 'Leave a review on Google',
     book_section_label: 'Book', book_title: 'Book Your Stay', book_sub: 'Contact us directly on WhatsApp for availability, dates and the best rates.',
     book_cta: 'Chat on WhatsApp', book_address_label: 'Address', book_address: 'Neos Marmaras, 63081\nSithonia, Greece',
     book_hours_label: 'Check-in/out', book_checkin: 'Check-in: 14:00 – 22:00', book_checkout: 'Check-out: 07:00 – 11:00',
@@ -561,10 +570,10 @@ const I18N = {
     about_host_label: 'Ο οικοδεσπότης σας', about_host_name: 'Μάνος',
     stat1_n: '9,8', stat1_l: 'Βαθμολογία', stat2_n: '383', stat2_l: 'Κριτικές', stat3_n: '9,4', stat3_l: 'Βαθμός Οικογένειας',
     rooms_section_label: 'Διαμερίσματα', rooms_title: 'Επιλέξτε τον Χώρο σας', rooms_sub: 'Τρεις τύποι διαμερισμάτων, όλα με ιδιωτικά μπαλκόνια και εκπληκτική θέα',
-    r1_name: 'Τυπικό Δίκλινο', r1_size: '24 τ.μ.', r1_desc: 'Διπλό κρεβάτι και extra μονό, ιδιωτική κουζίνα και μπαλκόνι. Ιδανικό για ζευγάρια ή μικρές οικογένειες.', r1_guests: 'Έως 3 άτομα',
+    r1_name: 'Στούντιο Διπλό & Τρίπλο', r1_size: '24 τ.μ.', r1_desc: 'Διπλό κρεβάτι και extra μονό, ιδιωτική κουζίνα και μπαλκόνι. Ιδανικό για ζευγάρια ή μικρές οικογένειες.', r1_guests: 'Έως 3 άτομα',
     r2_name: 'Στούντιο με Θέα Θάλασσα', r2_size: '22 τ.μ.', r2_desc: 'Πλήρες στούντιο με πανοραμική θέα στον Κόλπο Κασσάνδρας. Διπλό κρεβάτι, ιδιωτικό μπάνιο και μπαλκόνι.', r2_guests: 'Έως 3 άτομα',
-    r3_name: 'Οικογενειακό Στούντιο', r3_size: '38 τ.μ.', r3_desc: 'Το μεγαλύτερο διαμέρισμα — δύο μονά και ένα διπλό κρεβάτι. Ιδανικό για 4 άτομα, με εκπληκτική θέα θάλασσα.', r3_guests: 'Έως 4 άτομα',
-    room_cta: 'Κράτηση μέσω WhatsApp', badge_sea: 'Θέα Θάλασσα', badge_largest: 'Μεγαλύτερο',
+    r3_name: 'Διαμέρισμα Δύο Δωματίων', r3_size: '38 τ.μ.', r3_desc: 'Δύο ξεχωριστά υπνοδωμάτια με διπλά κρεβάτια, πλήρως εξοπλισμένη κουζίνα και ιδιωτικό μπαλκόνι. Διαθέτει γραφείο και μηχανή καφέ.', r3_guests: 'Έως 4 άτομα',
+    room_cta: 'Κράτηση μέσω WhatsApp', badge_sea: 'Θέα Θάλασσα', badge_2rooms: '2 Δωμάτια',
     gallery_section_label: 'Φωτογραφίες', gallery_title: 'Δείτε τον Χώρο', gallery_sub: 'Διαμερίσματα, μπαλκόνια και θέες του House Mistral',
     amen_section_label: 'Παροχές', amen_title: 'Όλα όσα Χρειάζεστε',
     area_section_label: 'Τοποθεσία', area_title: 'Νέος Μαρμαράς', area_sub: 'Ένα στολίδι στη Σιθωνία',
@@ -573,7 +582,7 @@ const I18N = {
     d1: '300 μ. — Κέντρο & μαρίνα', d2: '900 μ. — Παραλία Παράδεισος', d3: '1,2 χλμ. — Παραλία Ν. Μαρμαρά', d4: '400 μ. — Καφές & εστιατόρια', d5: '2,1 χλμ. — Παραλία Porto Carras', d6: '150 μ. — Στάση λεωφορείου',
     rev_section_label: 'Κριτικές', rev_title: 'Τι Λένε οι Επισκέπτες μας', rev_sub: 'Αξιολογήθηκε ως Εξαιρετικό · 9,8 / 10 στο Booking.com',
     booking_cta: 'Δείτε και τις 383 κριτικές στο Booking.com',
-    rev_cta_title: 'Σας άρεσε η διαμονή σας;', rev_cta_sub: 'Η κριτική σας βοηθά άλλους ταξιδιώτες να ανακαλύψουν το House Mistral — ευχαριστούμε που τη μοιράζεστε στο Booking.com.', rev_cta_btn: 'Αφήστε μια κριτική στο Booking.com',
+    rev_cta_title: 'Σας άρεσε η διαμονή σας;', rev_cta_sub: 'Η κριτική σας βοηθά άλλους ταξιδιώτες να ανακαλύψουν το House Mistral — ευχαριστούμε που τη μοιράζεστε στο Google.', rev_cta_btn: 'Αφήστε μια κριτική στο Google',
     book_section_label: 'Κράτηση', book_title: 'Κάντε Κράτηση', book_sub: 'Επικοινωνήστε μαζί μας απευθείας στο WhatsApp για διαθεσιμότητα και τιμές.',
     book_cta: 'WhatsApp', book_address_label: 'Διεύθυνση', book_address: 'Νέος Μαρμαράς, 63081\nΣιθωνία, Ελλάδα',
     book_hours_label: 'Check-in/out', book_checkin: 'Check-in: 14:00 – 22:00', book_checkout: 'Check-out: 07:00 – 11:00',
@@ -648,13 +657,56 @@ mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeM
 // Lightbox
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
-document.querySelectorAll('.gallery-item img').forEach(img => {
-  img.parentElement.addEventListener('click', () => { lightboxImg.src = img.src; lightbox.classList.add('open'); });
-});
-function closeLightbox() { lightbox.classList.remove('open'); lightboxImg.src = ''; }
+const lightboxCounter = document.getElementById('lightbox-counter');
+const GALLERY_DATA = {
+  studio:   Array.from({length:7},  (_,i) => 'images/studio/'+(i+1)+'.jpg'),
+  seaview:  Array.from({length:10}, (_,i) => 'images/seaview/'+(i+1)+'.jpg'),
+  apt2rooms:Array.from({length:6},  (_,i) => 'images/apt2rooms/'+(i+1)+'.jpg'),
+};
+let lbPhotos = [], lbIdx = 0;
+function lbShow() {
+  lightboxImg.src = lbPhotos[lbIdx];
+  lightboxCounter.textContent = lbPhotos.length > 1 ? (lbIdx+1) + ' / ' + lbPhotos.length : '';
+}
+function lbOpen(photos, startIdx) {
+  lbPhotos = photos; lbIdx = startIdx || 0;
+  lbShow();
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() { lightbox.classList.remove('open'); lightboxImg.src = ''; document.body.style.overflow = ''; }
+function lbNext() { if (!lbPhotos.length) return; lbIdx = (lbIdx+1) % lbPhotos.length; lbShow(); }
+function lbPrev() { if (!lbPhotos.length) return; lbIdx = (lbIdx-1+lbPhotos.length) % lbPhotos.length; lbShow(); }
 document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
-lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+document.getElementById('lightbox-next').addEventListener('click', e => { e.stopPropagation(); lbNext(); });
+document.getElementById('lightbox-prev').addEventListener('click', e => { e.stopPropagation(); lbPrev(); });
+lightbox.addEventListener('click', e => { if (e.target === lightbox || e.target === lightboxImg) closeLightbox(); });
+document.addEventListener('keydown', e => {
+  if (!lightbox.classList.contains('open')) return;
+  if (e.key === 'Escape') closeLightbox();
+  else if (e.key === 'ArrowRight') lbNext();
+  else if (e.key === 'ArrowLeft') lbPrev();
+});
+let lbTouchX = null;
+lightbox.addEventListener('touchstart', e => { lbTouchX = e.touches[0].clientX; }, {passive:true});
+lightbox.addEventListener('touchend', e => {
+  if (lbTouchX === null) return;
+  const dx = e.changedTouches[0].clientX - lbTouchX;
+  if (Math.abs(dx) > 50) dx > 0 ? lbPrev() : lbNext();
+  lbTouchX = null;
+}, {passive:true});
+// Gallery section: click opens full gallery lightbox
+const galleryImgs = Array.from(document.querySelectorAll('.gallery-item img'));
+galleryImgs.forEach((img, i) => {
+  img.parentElement.addEventListener('click', () => lbOpen(galleryImgs.map(el => el.src), i));
+});
+// Room cards: click opens that room's gallery
+document.querySelectorAll('.room-card[data-gallery]').forEach(card => {
+  card.addEventListener('click', function(e) {
+    if (e.target.closest('.room-cta')) return;
+    lbOpen(GALLERY_DATA[card.dataset.gallery] || [], 0);
+  });
+});
 
 renderAmenities();
 renderReviews();

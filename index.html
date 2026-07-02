@@ -63,6 +63,23 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"How do I make a booking?","acceptedAnswer":{"@type":"Answer","text":"Contact Manos directly on WhatsApp (+30 694 477 1000) or by email at housemistral@gmail.com."}},
+    {"@type":"Question","name":"Is parking available?","acceptedAnswer":{"@type":"Answer","text":"Yes, free parking is available nearby at no extra charge."}},
+    {"@type":"Question","name":"Are pets welcome?","acceptedAnswer":{"@type":"Answer","text":"Yes, pets are welcome on request. Please mention it when booking."}},
+    {"@type":"Question","name":"What are the check-in and check-out times?","acceptedAnswer":{"@type":"Answer","text":"Check-in is from 14:00 to 22:00. Check-out is by 11:00."}},
+    {"@type":"Question","name":"Is WiFi available?","acceptedAnswer":{"@type":"Answer","text":"Yes, free WiFi is available throughout the property."}},
+    {"@type":"Question","name":"Is advance payment required?","acceptedAnswer":{"@type":"Answer","text":"No advance payment is required. Payment is made upon arrival."}},
+    {"@type":"Question","name":"How far is the beach?","acceptedAnswer":{"@type":"Answer","text":"Paradisos Beach is 900 m away. Neos Marmaras Beach is 1.2 km. Both are easily reached on foot."}}
+  ]
+}
+</script>
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/icon.svg">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23123a63'/><text x='16' y='23' font-family='Georgia,serif' font-size='19' fill='white' text-anchor='middle'>M</text></svg>">
 
 <link rel="preload" as="image" href="images/panorama-sea.jpg">
@@ -207,8 +224,12 @@
   .nearby { display: flex; flex-direction: column; gap: 12px; }
   .nearby div { display: flex; align-items: center; gap: 14px; font-size: 14px; color: rgba(255,255,255,0.85); }
   .nearby .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
-  .map { border-radius: 16px; overflow: hidden; height: 480px; box-shadow: 0 24px 64px rgba(0,0,0,0.35); }
-  .map iframe { width: 100%; height: 100%; border: none; display: block; }
+  .map { border-radius: 16px; overflow: hidden; height: 480px; box-shadow: 0 24px 64px rgba(0,0,0,0.35); position: relative; }
+  .map-ph { position: absolute; inset: 0; background: oklch(24% 0.09 232); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; color: rgba(255,255,255,0.6); font-size: 14px; text-align: center; padding: 24px; }
+  .map-ph svg { width: 32px; height: 32px; opacity: .4; }
+  .map-ph button { background: rgba(255,255,255,0.12); color: #fff; border: 1px solid rgba(255,255,255,0.25); padding: 9px 22px; border-radius: 20px; cursor: pointer; font-size: 13px; font-family: inherit; transition: background .2s; }
+  .map-ph button:hover { background: rgba(255,255,255,0.22); }
+  .map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; display: block; }
 
   /* REVIEWS */
   .reviews { background: var(--cream); padding: 100px 0; }
@@ -270,6 +291,34 @@
   .lb-counter { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.6); font-size: 13px; letter-spacing: .08em; white-space: nowrap; pointer-events: none; }
   .room-card[data-gallery] { cursor: pointer; }
 
+  /* FAQ */
+  .faq { background: oklch(97% 0.008 72); padding: 80px 0; }
+  .faq-list { max-width: 760px; margin: 0 auto; }
+  .faq-item { border-bottom: 1px solid oklch(90% 0.01 230); }
+  .faq-item:first-child { border-top: 1px solid oklch(90% 0.01 230); }
+  .faq-q { width: 100%; text-align: left; padding: 20px 0; display: flex; align-items: center; justify-content: space-between; gap: 16px; background: none; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+  .faq-q span { font-size: 15px; font-weight: 500; color: var(--ink); line-height: 1.4; }
+  .faq-q svg { width: 18px; height: 18px; flex-shrink: 0; color: var(--gold); transition: transform .3s; }
+  .faq-item.open .faq-q svg { transform: rotate(45deg); }
+  .faq-a { font-size: 14px; line-height: 1.78; color: oklch(42% 0.04 230); max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .35s ease; }
+  .faq-item.open .faq-a { max-height: 200px; padding-bottom: 20px; }
+
+  /* COOKIE BANNER */
+  .cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; z-index: 200; background: oklch(16% 0.07 232); color: #fff; padding: 14px 28px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; box-shadow: 0 -4px 24px rgba(0,0,0,0.25); transform: translateY(100%); transition: transform .4s ease; }
+  .cookie-banner.show { transform: translateY(0); }
+  .cookie-text { font-size: 13px; color: rgba(255,255,255,0.8); line-height: 1.5; }
+  .cookie-text a { color: oklch(72% 0.11 85); text-decoration: underline; }
+  .cookie-btns { display: flex; gap: 10px; flex-shrink: 0; }
+  .cookie-btn { padding: 8px 20px; border-radius: 20px; font-size: 13px; font-weight: 500; cursor: pointer; border: 1px solid rgba(255,255,255,0.28); color: #fff; background: transparent; transition: all .2s; font-family: inherit; }
+  .cookie-btn.accept { background: #25D366; border-color: #25D366; }
+  .cookie-btn:hover { opacity: .85; }
+
+  /* SCROLL TOP */
+  .scroll-top { position: fixed; bottom: 100px; right: 28px; z-index: 89; width: 42px; height: 42px; border-radius: 50%; background: var(--blue); color: #fff; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity .3s, transform .3s; box-shadow: 0 4px 16px rgba(0,0,0,0.22); }
+  .scroll-top.visible { opacity: 1; pointer-events: auto; }
+  .scroll-top:hover { transform: translateY(-3px); }
+  .scroll-top svg { width: 18px; height: 18px; }
+
   @media (max-width: 900px) {
     .about-grid, .area-grid { grid-template-columns: 1fr; gap: 36px; }
     .stats-box { position: static; right: auto; bottom: auto; margin-top: 16px; border-radius: 12px; }
@@ -314,6 +363,7 @@
       <a href="#gallery" data-i18n="nav_gallery">Gallery</a>
       <a href="#area" data-i18n="nav_area">The Area</a>
       <a href="#reviews" data-i18n="nav_reviews">Reviews</a>
+      <a href="#faq" data-i18n="nav_faq">FAQ</a>
       <a href="#contact" data-i18n="nav_contact">Book</a>
       <button class="lang-btn" id="lang-btn">ΕΛ</button>
     </div>
@@ -330,6 +380,7 @@
   <a href="#gallery" data-i18n="nav_gallery">Gallery</a>
   <a href="#area" data-i18n="nav_area">The Area</a>
   <a href="#reviews" data-i18n="nav_reviews">Reviews</a>
+  <a href="#faq" data-i18n="nav_faq">FAQ</a>
   <a href="#contact" data-i18n="nav_contact">Book</a>
   <button class="lang-btn" id="lang-btn-mobile">ΕΛ</button>
 </div>
@@ -490,6 +541,46 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="center-head" style="margin-bottom:52px;">
+      <p class="section-label" data-i18n="faq_section_label">FAQ</p>
+      <h2 class="section-title" data-i18n="faq_title">Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span data-i18n="faq_1_q">How do I make a booking?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></button>
+        <div class="faq-a"><p data-i18n="faq_1_a">Contact Manos directly on WhatsApp (+30 694 477 1000) or by email at housemistral@gmail.com. We reply within a few hours.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span data-i18n="faq_2_q">Is parking available?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></button>
+        <div class="faq-a"><p data-i18n="faq_2_a">Yes, free parking is available nearby at no extra charge.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span data-i18n="faq_3_q">Are pets welcome?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></button>
+        <div class="faq-a"><p data-i18n="faq_3_a">Yes, pets are welcome on request. Please mention it when booking.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span data-i18n="faq_4_q">What are the check-in and check-out times?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></button>
+        <div class="faq-a"><p data-i18n="faq_4_a">Check-in is from 14:00 to 22:00. Check-out is by 11:00.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span data-i18n="faq_5_q">Is WiFi available?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></button>
+        <div class="faq-a"><p data-i18n="faq_5_a">Yes, free WiFi is available throughout the property.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span data-i18n="faq_6_q">Is advance payment required?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></button>
+        <div class="faq-a"><p data-i18n="faq_6_a">No advance payment is required. Payment is made upon arrival.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span data-i18n="faq_7_q">How far is the beach?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></button>
+        <div class="faq-a"><p data-i18n="faq_7_a">Paradisos Beach is 900 m away. Neos Marmaras Beach is 1.2 km. Both are easily reached on foot.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- AREA -->
 <section class="area" id="area">
   <div class="wrap area-grid">
@@ -509,7 +600,12 @@
       </div>
     </div>
     <div class="map">
-      <iframe src="https://maps.google.com/maps?q=House+Mistral+Neos+Marmaras&ll=40.0974641,23.7828939&z=17&output=embed" loading="lazy" title="House Mistral location in Neos Marmaras"></iframe>
+      <div class="map-ph" id="map-ph">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" stroke-linecap="round"/></svg>
+        <span data-i18n="map_disabled">Map disabled to protect your privacy.</span>
+        <button onclick="enableMap()" data-i18n="map_enable">Enable Map</button>
+      </div>
+      <iframe id="map-iframe" data-src="https://maps.google.com/maps?q=House+Mistral+Neos+Marmaras&ll=40.0974641,23.7828939&z=17&output=embed" loading="lazy" title="House Mistral location in Neos Marmaras" style="display:none"></iframe>
     </div>
   </div>
 </section>
@@ -607,6 +703,17 @@ const I18N = {
     book_hours_label: 'Check-in/out', book_checkin: 'Check-in: 14:00 – 22:00', book_checkout: 'Check-out: 07:00 – 11:00',
     book_extras_label: 'Extras', book_note: 'Pets welcome · Free parking · No advance payment',
     footer_copy: '© 2026 House Mistral · Neos Marmaras, Greece', footer_lic: 'Licence no. 0938K131K0399400', footer_made: 'Made by Pagolander',
+    nav_faq: 'FAQ',
+    faq_section_label: 'FAQ', faq_title: 'Frequently Asked Questions',
+    faq_1_q: 'How do I make a booking?', faq_1_a: 'Contact Manos directly on WhatsApp (+30 694 477 1000) or by email at housemistral@gmail.com. We reply within a few hours.',
+    faq_2_q: 'Is parking available?', faq_2_a: 'Yes, free parking is available nearby at no extra charge.',
+    faq_3_q: 'Are pets welcome?', faq_3_a: 'Yes, pets are welcome on request. Please mention it when booking.',
+    faq_4_q: 'What are the check-in and check-out times?', faq_4_a: 'Check-in is from 14:00 to 22:00. Check-out is by 11:00.',
+    faq_5_q: 'Is WiFi available?', faq_5_a: 'Yes, free WiFi is available throughout the property.',
+    faq_6_q: 'Is advance payment required?', faq_6_a: 'No advance payment is required. Payment is made upon arrival.',
+    faq_7_q: 'How far is the beach?', faq_7_a: 'Paradisos Beach is 900 m away. Neos Marmaras Beach is 1.2 km. Both are easily reached on foot.',
+    map_disabled: 'Map disabled to protect your privacy.', map_enable: 'Enable Map',
+    cookie_text: 'We use Google Maps to show our location. ', cookie_policy: 'Privacy Policy', cookie_accept: 'Accept', cookie_decline: 'Decline',
   },
   gr: {
     nav_about: 'Σχετικά', nav_rooms: 'Δωμάτια', nav_gallery: 'Γκαλερί', nav_area: 'Η Περιοχή', nav_reviews: 'Κριτικές', nav_contact: 'Κράτηση',
@@ -636,6 +743,17 @@ const I18N = {
     book_hours_label: 'Check-in/out', book_checkin: 'Check-in: 14:00 – 22:00', book_checkout: 'Check-out: 07:00 – 11:00',
     book_extras_label: 'Έξτρα', book_note: 'Κατοικίδια ευπρόσδεκτα · Δωρεάν πάρκινγκ · Χωρίς προκαταβολή',
     footer_copy: '© 2026 House Mistral · Νέος Μαρμαράς, Ελλάδα', footer_lic: 'Άδεια αρ. 0938K131K0399400', footer_made: 'Σχεδιασμός από Pagolander',
+    nav_faq: 'FAQ',
+    faq_section_label: 'FAQ', faq_title: 'Συχνές Ερωτήσεις',
+    faq_1_q: 'Πώς κάνω κράτηση;', faq_1_a: 'Επικοινωνήστε με τον Μάνο απευθείας στο WhatsApp (+30 694 477 1000) ή μέσω email στο housemistral@gmail.com. Απαντάμε εντός λίγων ωρών.',
+    faq_2_q: 'Υπάρχει πάρκινγκ;', faq_2_a: 'Ναι, υπάρχει δωρεάν πάρκινγκ κοντά στην ιδιοκτησία.',
+    faq_3_q: 'Επιτρέπονται κατοικίδια;', faq_3_a: 'Ναι, τα κατοικίδια γίνονται δεκτά κατόπιν αιτήματος. Παρακαλούμε να το αναφέρετε κατά την κράτηση.',
+    faq_4_q: 'Ποιες είναι οι ώρες check-in και check-out;', faq_4_a: 'Το check-in γίνεται από τις 14:00 έως τις 22:00. Το check-out έως τις 11:00.',
+    faq_5_q: 'Υπάρχει WiFi;', faq_5_a: 'Ναι, δωρεάν WiFi σε όλους τους χώρους της ιδιοκτησίας.',
+    faq_6_q: 'Απαιτείται προκαταβολή;', faq_6_a: 'Δεν απαιτείται προκαταβολή. Η πληρωμή γίνεται κατά την άφιξη.',
+    faq_7_q: 'Πόσο μακριά είναι η παραλία;', faq_7_a: 'Η παραλία Παράδεισος απέχει 900 μ. Η παραλία Νέου Μαρμαρά 1,2 χλμ. Και οι δύο προσεγγίζονται εύκολα πεζή.',
+    map_disabled: 'Ο χάρτης είναι απενεργοποιημένος για προστασία του απορρήτου σας.', map_enable: 'Ενεργοποίηση Χάρτη',
+    cookie_text: 'Χρησιμοποιούμε το Google Maps για την τοποθεσία μας. ', cookie_policy: 'Πολιτική Απορρήτου', cookie_accept: 'Αποδοχή', cookie_decline: 'Άρνηση',
   }
 };
 
@@ -759,6 +877,80 @@ document.querySelectorAll('.room-card[data-gallery]').forEach(card => {
 
 renderAmenities();
 renderReviews();
+
+// Scroll to top
+const scrollTopBtn = document.getElementById('scroll-top');
+window.addEventListener('scroll', () => {
+  scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
+}, {passive: true});
+scrollTopBtn.addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
+
+// Map consent
+function loadMap() {
+  const iframe = document.getElementById('map-iframe');
+  const ph = document.getElementById('map-ph');
+  if (iframe && iframe.dataset.src) {
+    iframe.src = iframe.dataset.src;
+    delete iframe.dataset.src;
+    iframe.style.display = '';
+    if (ph) ph.style.display = 'none';
+  }
+}
+function enableMap() {
+  localStorage.setItem('hm_cookie_consent', 'accepted');
+  loadMap();
+  const banner = document.getElementById('cookie-banner');
+  if (banner) banner.classList.remove('show');
+}
+
+// Cookie consent
+const cookieBanner = document.getElementById('cookie-banner');
+const hmConsent = localStorage.getItem('hm_cookie_consent');
+if (hmConsent === 'accepted') {
+  loadMap();
+} else if (!hmConsent) {
+  setTimeout(() => cookieBanner.classList.add('show'), 1200);
+}
+document.getElementById('cookie-accept').addEventListener('click', () => {
+  localStorage.setItem('hm_cookie_consent', 'accepted');
+  cookieBanner.classList.remove('show');
+  loadMap();
+});
+document.getElementById('cookie-decline').addEventListener('click', () => {
+  localStorage.setItem('hm_cookie_consent', 'declined');
+  cookieBanner.classList.remove('show');
+});
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
 </script>
+
+<!-- Scroll to top -->
+<button class="scroll-top" id="scroll-top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<!-- Cookie banner -->
+<div class="cookie-banner" id="cookie-banner">
+  <p class="cookie-text"><span data-i18n="cookie_text">We use Google Maps to show our location. </span><a href="/privacy.html" data-i18n="cookie_policy">Privacy Policy</a></p>
+  <div class="cookie-btns">
+    <button class="cookie-btn" id="cookie-decline" data-i18n="cookie_decline">Decline</button>
+    <button class="cookie-btn accept" id="cookie-accept" data-i18n="cookie_accept">Accept</button>
+  </div>
+</div>
+
 </body>
 </html>

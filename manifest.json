@@ -1,0 +1,19 @@
+{
+  "name": "House Mistral",
+  "short_name": "House Mistral",
+  "description": "Seaside apartments in Neos Marmaras, Sithonia, Greece",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#123a63",
+  "theme_color": "#123a63",
+  "orientation": "portrait-primary",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

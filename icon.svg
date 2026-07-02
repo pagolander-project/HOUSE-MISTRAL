@@ -1,4 +1,27 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="80" fill="#123a63"/>
-  <text x="256" y="360" font-family="Georgia,serif" font-size="300" fill="white" text-anchor="middle">M</text>
+  <!-- Background square -->
+  <rect width="512" height="512" rx="80" fill="#FAF6F0"/>
+  <!-- Outer oval bordeaux -->
+  <ellipse cx="256" cy="256" rx="238" ry="238" fill="#7B2535"/>
+  <ellipse cx="256" cy="256" rx="238" ry="238" fill="none"/>
+  <!-- Actually make it oval not circle -->
+  <ellipse cx="256" cy="256" rx="234" ry="220" fill="#7B2535"/>
+  <ellipse cx="256" cy="256" rx="216" ry="202" fill="#FAF6F0"/>
+  <ellipse cx="256" cy="256" rx="207" ry="193" fill="none" stroke="#7B2535" stroke-width="3"/>
+  <!-- HOUSE -->
+  <text x="256" y="226"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="52"
+        font-weight="700"
+        letter-spacing="8"
+        fill="#1A1826"
+        text-anchor="middle">HOUSE</text>
+  <!-- MISTRAL -->
+  <text x="256" y="308"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="92"
+        font-weight="400"
+        font-style="italic"
+        fill="#1A1826"
+        text-anchor="middle">MISTRAL</text>
 </svg>

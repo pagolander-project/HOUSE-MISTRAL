@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 226">
+  <!-- Outer oval — thick bordeaux border -->
+  <ellipse cx="170" cy="113" rx="166" ry="110" fill="#7B2535"/>
+  <!-- Cream fill -->
+  <ellipse cx="170" cy="113" rx="153" ry="97" fill="#FAF6F0"/>
+  <!-- Inner thin ring -->
+  <ellipse cx="170" cy="113" rx="146" ry="90" fill="none" stroke="#7B2535" stroke-width="1.8"/>
+  <!-- HOUSE -->
+  <text x="170" y="92"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="28"
+        font-weight="700"
+        letter-spacing="7"
+        fill="#1A1826"
+        text-anchor="middle">HOUSE</text>
+  <!-- MISTRAL -->
+  <text x="170" y="146"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="52"
+        font-weight="400"
+        font-style="italic"
+        fill="#1A1826"
+        text-anchor="middle">MISTRAL</text>
+  <!-- Phone number (like on the real sign) -->
+  <text x="170" y="177"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="13"
+        fill="#7B2535"
+        text-anchor="middle"
+        letter-spacing="1">&#9990; 6944 771000</text>
+</svg>

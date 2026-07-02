@@ -23,6 +23,46 @@
 <meta name="twitter:title" content="House Mistral — Seaside Apartments in Neos Marmaras">
 <meta name="twitter:description" content="Self-catering apartments with sea views in Sithonia, Greece. Rated 9.8 Exceptional. Book direct via WhatsApp.">
 <meta name="twitter:image" content="https://house-mistral.vercel.app/images/panorama-sea.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  "name": "House Mistral",
+  "description": "Self-catering apartments with private balconies and sea views in Neos Marmaras, Sithonia (Halkidiki), Greece. Rated 9.8 Exceptional on Booking.com.",
+  "url": "https://house-mistral.vercel.app/",
+  "telephone": "+306944771000",
+  "email": "housemistral@gmail.com",
+  "image": "https://house-mistral.vercel.app/images/panorama-sea.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Neos Marmaras",
+    "postalCode": "63081",
+    "addressCountry": "GR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 40.0974641,
+    "longitude": 23.7828939
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "9.8",
+    "reviewCount": "383",
+    "bestRating": "10",
+    "worstRating": "1"
+  },
+  "amenityFeature": [
+    {"@type": "LocationFeatureSpecification", "name": "Free WiFi", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Free parking", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Air conditioning", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Pets allowed", "value": true}
+  ],
+  "sameAs": [
+    "https://www.facebook.com/p/House-Mistral-Sithonia-Neos-Marmaras-100089791796513/",
+    "https://www.booking.com/hotel/gr/house-mistral.html"
+  ]
+}
+</script>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23123a63'/><text x='16' y='23' font-family='Georgia,serif' font-size='19' fill='white' text-anchor='middle'>M</text></svg>">
 
 <link rel="preload" as="image" href="images/panorama-sea.jpg">
@@ -186,16 +226,6 @@
   .booking-link a:hover { background: #fff; }
   .add-review { background: #fff; border-radius: 20px; padding: 48px; box-shadow: 0 6px 36px rgba(0,0,0,0.09); max-width: 640px; margin: 0 auto; }
   .add-review h3 { font-size: 1.9rem; margin-bottom: 32px; }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
-  .add-review label { display: block; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: oklch(52% 0.04 230); margin-bottom: 8px; }
-  .add-review input, .add-review select, .add-review textarea { width: 100%; padding: 11px 14px; border: 1px solid oklch(88% 0.01 230); border-radius: 8px; font-size: 14px; color: var(--ink); outline: none; background: #fff; }
-  .add-review textarea { resize: vertical; }
-  .add-review .field { margin-bottom: 24px; }
-  .submit-btn { width: 100%; background: var(--blue); color: #fff; padding: 14px; border-radius: 8px; font-size: 14px; letter-spacing: .06em; transition: background .25s; }
-  .submit-btn:hover { background: oklch(40% 0.14 232); }
-  .thanks { text-align: center; padding: 36px; background: oklch(95% 0.05 158); border-radius: 12px; }
-  .thanks .check { font-size: 2rem; margin-bottom: 12px; color: oklch(40% 0.14 158); }
-  .thanks p { font-size: 16px; font-weight: 500; color: oklch(28% 0.12 158); }
 
   /* CONTACT */
   .contact { background: var(--blue-deep); color: #fff; padding: 100px 0; }
@@ -255,7 +285,6 @@
     .hero-ctas { flex-direction: column; align-items: stretch; }
     .hero-ctas .btn-wa, .hero-ctas .score-badge { justify-content: center; }
     .add-review { padding: 32px 24px; }
-    .form-row { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -372,7 +401,7 @@
     </div>
     <div class="rooms-grid">
       <div class="room-card" data-gallery="studio">
-        <div class="room-img-wrap"><img src="images/studio/1.jpg" alt="Double &amp; Triple Studio"></div>
+        <div class="room-img-wrap"><img src="images/studio/1.jpg" alt="Double &amp; Triple Studio" loading="lazy"></div>
         <div class="room-body">
           <div class="room-head"><h3 data-i18n="r1_name">Double &amp; Triple Studio</h3><span class="room-size" data-i18n="r1_size">24 m²</span></div>
           <p class="room-desc" data-i18n="r1_desc">Double bed and extra single bed, private kitchen and balcony. Ideal for couples or small families.</p>
@@ -381,7 +410,7 @@
         </div>
       </div>
       <div class="room-card" data-gallery="studio_sv">
-        <div class="room-img-wrap"><img src="images/studio-sv/1.jpg" alt="Studio with Sea View"><div class="room-badge" style="background:var(--gold);" data-i18n="badge_sea">Sea View</div></div>
+        <div class="room-img-wrap"><img src="images/studio-sv/1.jpg" alt="Studio with Sea View" loading="lazy"><div class="room-badge" style="background:var(--gold);" data-i18n="badge_sea">Sea View</div></div>
         <div class="room-body">
           <div class="room-head"><h3 data-i18n="r2_name">Studio with Sea View</h3><span class="room-size" data-i18n="r2_size">22 m²</span></div>
           <p class="room-desc" data-i18n="r2_desc">Cosy studio with sea views, double bed and private bathroom. Perfect for couples or small families seeking a peaceful stay.</p>
@@ -390,7 +419,7 @@
         </div>
       </div>
       <div class="room-card" data-gallery="seaview">
-        <div class="room-img-wrap"><img src="images/seaview/1.jpg" alt="Sea View Apartment"><div class="room-badge" style="background:var(--gold);" data-i18n="badge_sea">Sea View</div></div>
+        <div class="room-img-wrap"><img src="images/seaview/1.jpg" alt="Sea View Apartment" loading="lazy"><div class="room-badge" style="background:var(--gold);" data-i18n="badge_sea">Sea View</div></div>
         <div class="room-body">
           <div class="room-head"><h3 data-i18n="r3_name">Sea View Apartment</h3><span class="room-size" data-i18n="r3_size">38 m²</span></div>
           <p class="room-desc" data-i18n="r3_desc">Spacious apartment with panoramic sea views over Kassandra Gulf. Double bed, private kitchen, bath and sunny balcony.</p>
@@ -399,7 +428,7 @@
         </div>
       </div>
       <div class="room-card" data-gallery="apt2rooms">
-        <div class="room-img-wrap"><img src="images/apt2rooms/1.jpg" alt="Two-Bedroom Apartment"><div class="room-badge" style="background:var(--blue);" data-i18n="badge_2rooms">2 Rooms</div></div>
+        <div class="room-img-wrap"><img src="images/apt2rooms/1.jpg" alt="Two-Bedroom Apartment" loading="lazy"><div class="room-badge" style="background:var(--blue);" data-i18n="badge_2rooms">2 Rooms</div></div>
         <div class="room-body">
           <div class="room-head"><h3 data-i18n="r4_name">Two-Bedroom Apartment</h3><span class="room-size" data-i18n="r4_size">40 m²</span></div>
           <p class="room-desc" data-i18n="r4_desc">Two separate bedrooms, fully equipped kitchen and private balcony. Includes desk and coffee machine.</p>
@@ -438,14 +467,14 @@
       <div class="gallery-item"><img src="images/terrace.jpg" alt="Terrace lounge with hanging chair" loading="lazy"></div>
       <div class="gallery-item"><img src="images/view-window.jpg" alt="View from the apartment" loading="lazy"></div>
       <div class="gallery-item"><img src="images/bathroom-3.jpg" alt="Bathroom" loading="lazy"></div>
-      <div class="gallery-item"><img src="images/gallery/1.jpg" alt="House Mistral" loading="lazy"></div>
-      <div class="gallery-item"><img src="images/gallery/2.jpg" alt="House Mistral" loading="lazy"></div>
-      <div class="gallery-item"><img src="images/gallery/3.jpg" alt="House Mistral" loading="lazy"></div>
-      <div class="gallery-item"><img src="images/gallery/4.jpg" alt="House Mistral" loading="lazy"></div>
-      <div class="gallery-item"><img src="images/gallery/5.jpg" alt="House Mistral" loading="lazy"></div>
-      <div class="gallery-item"><img src="images/gallery/6.jpg" alt="House Mistral" loading="lazy"></div>
-      <div class="gallery-item"><img src="images/gallery/7.jpg" alt="House Mistral" loading="lazy"></div>
-      <div class="gallery-item"><img src="images/gallery/8.jpg" alt="House Mistral" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/gallery/1.jpg" alt="House Mistral apartments — Neos Marmaras, Sithonia" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/gallery/2.jpg" alt="House Mistral sea view — Neos Marmaras, Sithonia" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/gallery/3.jpg" alt="House Mistral accommodation — Neos Marmaras" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/gallery/4.jpg" alt="House Mistral balcony — Neos Marmaras" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/gallery/5.jpg" alt="House Mistral interiors — Sithonia, Greece" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/gallery/6.jpg" alt="House Mistral rooms — Neos Marmaras, Greece" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/gallery/7.jpg" alt="House Mistral property — Sithonia, Halkidiki" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/gallery/8.jpg" alt="House Mistral guesthouse — Neos Marmaras, Halkidiki" loading="lazy"></div>
     </div>
   </div>
 </section>
